@@ -1,0 +1,31 @@
+.Abc{
+    padding: 1px;
+    background-color: #eee;
+    border-radius: 3px;
+    margin-top: -20px;
+ margin-left: -20px;
+ margin-right: -20px;
+ height: 40px;
+}
+p{
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.profile-text{
+    margin-top: 10px;
+    font-size: 12px;
+}
+.tab{
+    margin-top: 20px;
+}
+button{
+    width: 123px;
+    margin-left: 1019px;
+    background-color: royalblue;
+}
+mat-icon{
+    margin-left: -18px;
+    margin-top: 0px;
+}
+
+
