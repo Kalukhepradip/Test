@@ -9,9 +9,7 @@ export class DashboardComponent implements OnInit {
   name = 'Angular 6';
   email = "";
   aa: boolean = false;
-
   users = [
-
     { id: '(883) 482-3894', email: 'Kim Harper' },
     { id: '(829) 455-2780', email: 'George Wall' },
     { id: '(962) 514-3534', email: 'Baker Adkins' },
@@ -66,10 +64,7 @@ export class DashboardComponent implements OnInit {
     { id: '(875) 443-3967', email: 'Virgie James' },
     { id: '(846) 522-3559', email: 'Gonzalez Craig' },
     { id: '(959) 519-2635', email: 'Delacruz Lynch' },
-    { id: '(918) 582-3334', email: 'Avila Kaufman' },
-
-  ]
-  
+    { id: '(918) 582-3334', email: 'Avila Kaufman' },]
  temp2=[
   {
     "firstName":"Gould",
@@ -2030,19 +2025,15 @@ export class DashboardComponent implements OnInit {
   "webPage2":"",
   "mobilePhone":"",
   "organization":""
-},
- ]  
+},]  
  selectedEmp: any;
   number: any;
   dataSource: any[];
-
   setIndex(ii) {
     this.aa = ii;
     console.log
   }
-
   constructor() { }
-
   ngOnInit() {
   }
   setRow(i){
