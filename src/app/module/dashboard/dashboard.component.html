@@ -1,19 +1,198 @@
-<!-- <div>
- <app-widget-area></app-widget-area>
-</div>
-<br>
-<mat-divider></mat-divider>
-<br>
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-  <mat-card fxFlex="25"><app-widget-card></app-widget-card></mat-card>
-  <mat-card fxFlex="25"><app-widget-card></app-widget-card></mat-card>
-  <mat-card fxFlex="25"><app-widget-card></app-widget-card></mat-card>
-  <mat-card fxFlex="25"><app-widget-card></app-widget-card></mat-card>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6 ">
+      <h6>Contact List</h6>
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" [(ngModel)]="email" class="form-control" placeholder="Search Contact Name and Contact Number">
+      </div>
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-hover">
+          <thead>
+            <tr class="table-secondary">
+              <th scope="col">No.</th>
+              <th scope="col">Contact Name</th>
+              <th scope="col">Contact Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of users | customerEmailFilter:email;let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td (click)="setRow(i)" class="table-primary">  <img src="https://images.pexels.com/photos/190168/pexels-photo-190168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid img-thumbnail" alt="">{{customer.email}}</td>
+              <td (click)="setRow(i)" class="table-success"> <img src="https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid img-thumbnail" alt="">{{customer.id}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 ">
+      <h6>Contact Details</h6>
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text"  class="form-control" placeholder="Search">
+      </div>
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-hover" >
+          <thead>
+            <tr class="table-secondary">
+              <h6>Show The All  Contact Details</h6>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of dataSource">
+          <tr class="table-primary" >
+            <th>E-mail Address:</th>
+            <td>{{item.emailAddress}}</td>
+            
+          </tr>
+          <tr class="table-active" >
+            <th>Related Name:</th>
+            <td>{{item.relatedname}}</td>
+            
+          </tr>
+          
+          <tr class="table-secondary">
+            <th>Home Address 2:</th>
+            <td>{{item.homeAddress2}}</td>
+          </tr>
+          <tr class="table-success">
+            <th>Anniversary:</th>
+            <td>{{item.anniversary}}</td>
+          </tr>
+          <tr class="table-danger">
+            <th>First Name:</th>
+            <td>{{item.firstName}}</td>
+          </tr>
+          <tr class="table-warning">
+            <th>Business Address 2</th>
+            <td>{{item.businessAddress2}}</td>
+          </tr>
+          <tr class="table-info">
+            <th>Department:</th>
+            <td>{{item.department}}</td>
+          </tr>
+          <tr class="table-light">
+            <th>Display Name:</th>
+            <td> {{item.displayName}}</td>
+          </tr>
+          <tr class="table-dark">
+            <th>Home State:</th>
+            <td>{{item.homeState}}</td>
+          </tr>
+          <tr>
+            <th>Business Country:</th>
+            <td>{{item.businessCountry}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Home Street:</th>
+            <td>{{item.homeStreet}}</td>
+          </tr>
+          <tr class="table-primary">
+            <th>Birthday:</th>
+            <td>{{item.birthday}}</td>
+          </tr>
+          <tr>
+            <th>Home Country:</th>
+            <td>{{item.homeCountry}}</td>
+          </tr>
+          <tr class="table-secondary">
+            <th>Pager:</th>
+            <td>{{item.pager}}</td>
+          </tr>
+          <tr class="table-success">
+            <th>Categories:</th>
+            <td>{{item.categories}}</td>
+          </tr>
+          <tr class="table-danger">
+            <th>Home City:</th>
+            <td>{{item.homeCity}}</td>
+          </tr>
+          <tr class="table-warning">
+            <th>E-mail 3 Address:</th>
+            <td>{{item.emailAddress3}}</td>
+          </tr>
+          <tr class="table-info">
+            <th>Home Fax:</th>
+            <td>{{item.homeFax}}</td>
+          </tr>
+          <tr class="table-light">
+            <th>Gender:</th>
+            <td>{{item.Gender}}</td>
+          </tr>
+          <tr class="table-dark">
+            <th>Notes:</th>
+            <td>{{item.notes}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Country Code:</th>
+            <td>{{item.countryCode}}</td>
+          </tr>
+          <tr class="table-primary">
+            <th>Job Title:</th>
+            <td>{{item.jobTitle}}</td>
+          </tr>
+          <tr  class="table-secondary">
+            <th>Business Address:</th>
+            <td>{{item.businessAddress}}</td>
+          </tr>
+          <tr class="table-success">
+            <th>Web Page 2:</th>
+            <td>{{item.webPage2}}</td>
+          </tr>
+          <tr class="table-danger">
+            <th>Mobile Phone:</th>
+            <td>{{item.mobilePhone}}</td>
+          </tr>
+          <tr class="table-warning">
+            <th>Organization:</th>
+            <td>{{item.organization}}</td>
+          </tr>
+          <tr class="table-info">
+            <th>Home Phone:</th>
+            <td>{{item.homePhone}} </td>
+          </tr>
+          <tr class="table-light">
+            <th>E-mail 2 Address:</th>
+            <td>{{item.emailAddress2}}</td>
+          </tr>
+          <tr class="table-dark">
+            <th>Last Name:</th>
+            <td>{{item.lastName}}</td>
+          </tr>
+          <tr class="table-active">
+            <th>Nickname:</th>
+            <td>{{item.Nickname}}</td>
+          </tr>
+          <tr class="table-primary">
+            <th>Business Fax:</th>
+            <td>{{item.businessFax}}</td>
+          </tr>
+          <tr class="table-secondary">
+            <th>Home Postal Code:</th>
+            <td>{{item.homePostalCode}}</td>
+          </tr>
+          <tr class="table-success">
+            <th>Business Phone:</th>
+            <td>{{item.businessPhone}}</td>
+          </tr>
+          <tr class="table-danger">
+            <th>Business Postal Code:</th>
+            <td>{{item.businessPostalCode}}</td>
+          </tr>
+          <tr class="table-warning">
+            <th>Web Page:</th>
+            <td>{{item.webPage}}</td>
+          </tr>
+          <tr class="table-info">
+            <th>Business City:</th>
+            <td>{{item.businessCity}}</td>
+          </tr>
+          <tr class="table-light">
+            <th>Business State:</th>
+            <td>{{item.businessState}}</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-<br>
-<mat-divider></mat-divider>
-<br>
-<div>
-  <div>Table</div>
-  <div>Pie chart</div>
-</div> -->
+</div>

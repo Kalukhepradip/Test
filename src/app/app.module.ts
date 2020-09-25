@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{Routes} from '@angular/router';
+
+import{Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login-page/login/login.component';
-import { PersonalDetailsComponent } from './details-page/personal-details/personal-details.component';
-import { ProfessionalDetailsComponent } from './details-page/professional-details/professional-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule,
@@ -18,20 +16,18 @@ import { MatToolbarModule,
   MatInputModule,
   MatCardModule,
   MatSlideToggleModule,
+  MatCheckboxModule,
   MatSelectModule,
   MatOptionModule} from '@angular/material';
+import { DefaultModule } from './layouts/default/default.module';
 import { AppRoutingModule } from './app-routing.module';
-import { DefaultModule } from './layout/default/default.module';
-import { ProfilsComponent } from './module/dialog/profils/profils.component';
-import {MatDialogModule} from '@angular/material/dialog';
+// import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    PersonalDetailsComponent,
-    ProfessionalDetailsComponent,
-    ProfilsComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -49,17 +45,18 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     MatOptionModule,
     MatProgressSpinnerModule,
-    AppRoutingModule,
     MatFormFieldModule,
     FormsModule,
-    AppRoutingModule,
+    MatCheckboxModule,
+    // RouterModule.forRoot(appRoutes),
     DefaultModule,
-    MatDialogModule
+    AppRoutingModule,
+    // FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ProfilsComponent
   ]
 })
 export class AppModule { }

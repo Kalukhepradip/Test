@@ -1,3 +1,16 @@
 footer{
-    padding: 20px;
+    margin-left: 80px;
+    font-size: 18px;
+    color: white;
+    line-height: 1.7em;
+    font-weight: 400;
+    /* margin-top: 575px; */
+  
+}
+.footerdiv{
+    position: relative;
+    background-color: #122a4a;
+    height: 50px;
+    margin-bottom: 10px;
+    position: sticky;
 }

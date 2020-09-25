@@ -1,24 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeadreComponent } from './component/headre/headre.component';
+import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatLineModule, MatListModule } from '@angular/material';
+// import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { AreaComponent } from './widgets/area/area.component';
-import { CardComponent } from './widgets/card/card.component';
-import { PieComponent } from './widgets/pie/pie.component';
-// import{FLexLayoutModule} from'@angular/flex-layout'
-// import { HighchartsChartModule } from 'highcharts-angular';
+// import { SearchPipe } from '../modules/post/search.pipe';
 
 @NgModule({
   declarations: [
-    HeadreComponent,
+    HeaderComponent,
     FooterComponent,
-    SidebarComponent,
-    AreaComponent,
-    CardComponent,
-    PieComponent
+    // SidebarComponent,
+    // SearchPipe
     
   ],
   imports: [
@@ -27,19 +21,15 @@ import { PieComponent } from './widgets/pie/pie.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    // FLexLayoutModule,
     MatMenuModule,
-    MatListModule,
+    MatIconModule,
     RouterModule,
-    // HighchartsChartModule 
+    MatListModule
   ],
-  exports:[
-    HeadreComponent,
+  exports: [
+    HeaderComponent,
     FooterComponent,
-    SidebarComponent,
-    AreaComponent,
-    CardComponent,
-    PieComponent
+    // SidebarComponent
   ]
 })
 export class SharedModule { }
