@@ -22,9 +22,7 @@
               <td (click)="setRow(i)" class="table-primary"> <img
                   src="https://images.pexels.com/photos/190168/pexels-photo-190168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                   class="img-fluid img-thumbnail" alt="">{{customer.email}}</td>
-              <td (click)="setRow(i)" class="table-success"> <img
-                  src="https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  class="img-fluid img-thumbnail" alt="">{{customer.id}}</td>
+              <td (click)="setRow(i)" class="table-success"> {{customer.id}}</td>
             </tr>
           </tbody>
         </table>
@@ -34,7 +32,7 @@
       <h6>Contact Details</h6>
       <div class="form-group has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input type="text" class="form-control" placeholder="Search">
+        <!-- <input type="text"  class="form-control" placeholder="Search"> -->
       </div>
       <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table class="table table-hover">
@@ -50,7 +48,7 @@
             </tr>
             <tr class="table-active">
               <th>Related Name:</th>
-              <td>{{item.relatedname}}</td>
+              <td>{{item.relatedname}} </td>
             </tr>
             <tr class="table-secondary">
               <th>Home Address 2:</th>
@@ -74,7 +72,8 @@
             </tr>
             <tr class="table-light">
               <th>Display Name:</th>
-              <td> {{item.displayName}}</td>
+             
+              <td> <input type="text" [(ngModel)]="item.displayName" class="form-control"></td>
             </tr>
             <tr class="table-dark">
               <th>Home State:</th>
@@ -150,7 +149,8 @@
             </tr>
             <tr class="table-info">
               <th>Home Phone:</th>
-              <td>{{item.homePhone}} </td>
+
+              <td> <input type="text" [(ngModel)]="item.homePhone" class="form-control"></td>
             </tr>
             <tr class="table-light">
               <th>E-mail 2 Address:</th>
